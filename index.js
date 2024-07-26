@@ -1,25 +1,8 @@
-function isPalindrome(word) {
-  // Write your algorithm here
+// index.js
+function isPalindrome(str) {
+  const normalizedStr = str.toLowerCase(); // Normalize the string to lowercase
+  const reversedStr = normalizedStr.split('').reverse().join(''); // Reverse the string
+  return normalizedStr === reversedStr; // Check if the normalized string is equal to its reverse
 }
 
-/* 
-  Add your pseudocode here
-*/
-
-/*
-  Add written explanation of your solution here
-*/
-
-// You can run `node index.js` to view these console logs
-if (require.main === module) {
-  // add your own custom tests in here
-  console.log("Expecting: true");
-  console.log("=>", isPalindrome("racecar"));
-
-  console.log("");
-
-  console.log("Expecting: false");
-  console.log("=>", isPalindrome("robot"));
-}
-
-module.exports = isPalindrome;
+module.exports = { isPalindrome }; // Export the function to make it available in other files

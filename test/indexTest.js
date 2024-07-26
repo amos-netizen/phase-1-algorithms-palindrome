@@ -1,21 +1,25 @@
-const chai = require("chai");
-global.expect = chai.expect;
-const isPalindrome = require("../index");
+// test/indexTest.js
+const { isPalindrome } = require('../index.js'); // Import the isPalindrome function from index.js
+const { assert } = require('chai'); // Import Chai for assertions
 
-describe("isPalindrome", () => {
-  it("returns true for 'abba'", () => {
-    expect(isPalindrome("abba")).to.be.true;
-  });
-  it("returns true for 'racecar'", () => {
-    expect(isPalindrome("racecar")).to.be.true;
-  });
-  it("returns true for 'a'", () => {
-    expect(isPalindrome("a")).to.be.true;
-  });
-  it("returns false for 'robot'", () => {
-    expect(isPalindrome("robot")).to.be.false;
-  });
-  it("returns false for 'ab'", () => {
-    expect(isPalindrome("ab")).to.be.false;
-  });
+describe('isPalindrome Tests', () => {
+    it("should return true for 'abba'", () => {
+        assert.isTrue(isPalindrome('abba'), "Expected 'abba' to be a palindrome");
+    });
+
+    it("should return true for 'racecar'", () => {
+        assert.isTrue(isPalindrome('racecar'), "Expected 'racecar' to be a palindrome");
+    });
+
+    it("should return true for 'a'", () => {
+        assert.isTrue(isPalindrome('a'), "Expected 'a' to be a palindrome");
+    });
+
+    it("should return false for 'robot'", () => {
+        assert.isFalse(isPalindrome('robot'), "Expected 'robot' to not be a palindrome");
+    });
+
+    it("should return false for 'ab'", () => {
+        assert.isFalse(isPalindrome('ab'), "Expected 'ab' to not be a palindrome");
+    });
 });
